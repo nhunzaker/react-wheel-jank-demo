@@ -5,6 +5,12 @@ This is a mod of Nolan Lawson's original wheel jank demo, it requires
 a local build of React. **You will not be able to reproduce these
 results unless**:
 
+Visit: http://nh-react-scroll-fix.surge.sh/
+
+Or...
+
+### Reproduce this build of React
+
 ```
 git clone https://github.com/nhunzaker/react
 cd react
