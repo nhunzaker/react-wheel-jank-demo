@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
-import { times, noop } from 'lodash';
-
-let status = document.getElementById('status')
+import { times } from 'lodash';
 
 function wait(time) {
   console.log('Blocking!')
