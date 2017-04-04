@@ -4,12 +4,16 @@ import logo from './logo.svg';
 import './App.css';
 import { times, noop } from 'lodash';
 
+let status = document.getElementById('status')
+
 function wait(time) {
+  console.log('Blocking!')
   var startTime = (new Date()).getTime();
   var endTime = startTime + time;
   while ((new Date()).getTime() < endTime) {
     // wait for it...
   }
+  console.log('Not blocking!')
 }
 
 // jank up the main thread!
@@ -24,6 +28,9 @@ var scrollableDivStyle = {
 };
 
 class App extends Component {
+  onWheel () {
+    console.log('whee')
+  }
   render() {
     return (
       <div className="App">
@@ -37,7 +44,7 @@ class App extends Component {
           to the inner div, but this also adds a global <code>wheel</code> event to the
           whole document under the hood.
         </p>
-        <div style={scrollableDivStyle} ref="scrollableDiv" onWheel={noop}>
+        <div style={scrollableDivStyle} onWheel={this.onWheel}>
           <h2>I am scrollable!</h2>
           <ul>
             {(times(50, i => (<li key={i}>List item #{i + 1}</li>)))}
