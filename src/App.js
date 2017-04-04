@@ -26,8 +26,17 @@ var scrollableDivStyle = {
 
 class App extends Component {
   onWheel () {
-    console.log('whee')
+    console.log('wheel')
   }
+
+  onTouchStart () {
+    console.log('touch start')
+  }
+
+  onTouchMove () {
+    console.log('touch move')
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,7 +50,7 @@ class App extends Component {
           to the inner div, but this also adds a global <code>wheel</code> event to the
           whole document under the hood.
         </p>
-        <div style={scrollableDivStyle} onWheel={this.onWheel}>
+        <div style={scrollableDivStyle} onTouchStart={this.onTouchStart} onTouchMove={this.onTouchMove} onWheel={this.onWheel}>
           <h2>I am scrollable!</h2>
           <ul>
             {(times(50, i => (<li key={i}>List item #{i + 1}</li>)))}
